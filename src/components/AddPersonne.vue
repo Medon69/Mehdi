@@ -1,7 +1,39 @@
 <template>
   <div class="submit-form">
     <div v-if="!submitted">
-      <!-- A COMPLETER -->
+
+     
+
+      <div class="form-group">
+        <label for="id">id</label>
+        <input type="text" class="form-control" id="id"
+        v-model= "personne.id"
+          />
+      </div>
+        <div class="form-group">
+        <label for="surname">Prénom</label>
+        <input type="text" class="form-control" id="surname"
+        v-model= "personne.surname"
+          />
+       </div>
+        <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" class="form-control" id="name"
+        v-model= "personne.name"
+          />
+       </div>
+       <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="text" class="form-control" id="phone"
+        v-model= "personne.phone"
+          />
+       </div>
+       <div class="form-group">
+        <label for="city">Ville</label>
+        <input type="text" class="form-control" id="city"
+        v-model= "personne.city"
+          />
+      </div>
 
       <button @click="creerPersonne" class="btn btn-success">Ajouter</button>
     </div>
@@ -34,22 +66,21 @@ export default {
     creerPersonne() {
       var data = {
         id: this.personne.id,
-        id: this.personne.name,
-        id: this.personne.surname,
-        id: this.personne.phone,
-        id: this.personne.city,
-      }
+        name: this.personne.name,
+        surname: this.personne.surname,
+        phone: this.personne.phone,
+        city: this.personne.city,
       };
-
-      creerPersonne(id) {
-      PersonneDataService.create(data);
+      
+      PersonneDataService.create(data)
       .then(response => {
-          this.Personne = response.data;
           console.log(response.data);
+          this.$router.push({path:'/personnes'});
           this.submitted = true;
         })
         .catch(e => {
           console.log(e);
+      })
     },
     
     resetForm() {

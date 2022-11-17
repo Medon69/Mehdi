@@ -9,7 +9,7 @@ class PersonneDataService {
     return http.get(`/entree/${id}`);
   }
 
-  creerPersonne(id) {
+  create(data) {
     return http.post("/entree", data);
   }
 
@@ -20,6 +20,7 @@ class PersonneDataService {
 
   delete(id) {
   return http.delete(`/entree/${id}`);
+  }
 }
- } 
+
 export default new PersonneDataService();

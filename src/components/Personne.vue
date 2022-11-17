@@ -1,5 +1,5 @@
 <template>
-<div v-if="currentPersonne">
+ <div v-if="currentPersonne">
   <div class="form-group">
     <label for="id">ID</label>
     <input type="text" class ="" id="id" name=""
@@ -48,7 +48,7 @@
     </button>
     <p>{{ message }}</p>
    </div> 
-</template>
+ </template>
 
 <script>
 import PersonneDataService from "../services/PersonneDataService";
@@ -61,8 +61,9 @@ export default {
       message: ''
     };
   },
-  methods: {
-    getPersonne(id) {
+  
+ methods: { 
+  getPersonne(id) {
       PersonneDataService.get(id)
         .then(response => {
           this.currentPersonne = response.data;
@@ -78,51 +79,48 @@ export default {
         .then(response => {
           this.currentPersonne= response.data;
           console.log(response.data);
-          this.$router.push('/personnes')
+          this.$router.push({path:'/personnes'});
           this.message = 'Personne modifiée avec succès!';
-     })
+        })
         .catch(e => {
           console.log(e);
         });
- },
+    },
 
-    deletePersonne() {
-      PersonneDataService.delete(this.currentPersonne.id)
+  deletePersonne() {
+     PersonneDataService.delete(this.currentPersonne.id)
         .then(response => {
           this.currentPersonne= response.data;
           console.log(response.data);
+          this.$router.push({path:'/personnes'});
            })
          .catch(e => {
           console.log(e);
-          this.$router.push({ name: "ROUTE_VERS_LISTE_PERSONNES" })
-      
-     });
-    },
+         })
+        .catch(e => {
+          console.log(e);
+         });
+     },
 
-    createPersonne() {
-      PersonneDataService.create(this.currentPersonne.id)
-        .then(response => {
-          this.currentPersonne= response.data;
-          console.log(response.data);
-           })
-         .catch(e => {
-          console.log(response.data);
-             this.submitted = true;
-
-      })
-         
-  },
+   },
 
   mounted() {
     this.message = '';
     this.getPersonne(this.$route.params.id);
   }
 }
+
 </script>
 
-<style>
-.edit-form {
-  max-width: 300px;
+ <style>
+  .edit-form {
+  max-width: 600px;
   margin: auto;
 }
-</style>
+ </style>
+ <body style="background-color:powderblue;">
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
