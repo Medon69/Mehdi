@@ -2,8 +2,7 @@
   <div class="submit-form">
     <div v-if="!submitted">
 
-     
-
+    
       <div class="form-group">
         <label for="id">id</label>
         <input type="text" class="form-control" id="id"
@@ -39,7 +38,7 @@
     </div>
 
     <div v-else>
-      <h4>Personne ajoutée avec succès!</h4>
+      <h3>Personne ajoutée avec succès!</h3>
       <button class="btn btn-success" @click="resetForm">Ajouter une nouvelle personne</button>
     </div>
   </div>
@@ -50,7 +49,7 @@ import PersonneDataService from "../services/PersonneDataService";
 
 export default {
   name: "add-personne",
-  data() {
+    data() {
     return {
       personne: {
         id: null,

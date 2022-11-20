@@ -1,47 +1,40 @@
 <template>
  <div v-if="currentPersonne">
-  <div class="form-group">
+  <div class="col-sm-6">
     <label for="id">ID</label>
-    <input type="text" class ="" id="id" name=""
-    v-model="currentPersonne.id"
+    <input type="text" class ="form-control" id="id" name="" v-model="currentPersonne.id"
     /> 
   </div> 
-  <div class="form-group">
+  <div class="col-sm-6">
     <label for="id">Prenom</label>
-    <input type="text" class ="" id="id" name="surname"
-    v-model="currentPersonne.surname"
+    <input type="text" class ="form-control" id="id" name="surname" v-model="currentPersonne.surname"
     /> 
   </div> 
-  <div class="form-group">
+  <div class="col-sm-6">
     <label for="id">Nom</label>
-    <input type="text" class ="" id="id" name="name"
-    v-model="currentPersonne.name"
+    <input type="text" class ="form-control" id="id" name="name" v-model="currentPersonne.name"
     /> 
   </div> 
-  <div class="form-group">
+  <div class="col-sm-6">
     <label for="id">Telephone</label>
-    <input type="text" class ="" id="id" name="phone"
-    v-model="currentPersonne.phone"
+    <input type="text" class ="form-control" id="id" name="phone" v-model="currentPersonne.phone"
     /> 
   </div> 
-  <div class="form-group">
+  <div class="col-sm-6">
     <label for="id">Ville</label>
-  <input type="text" class ="" id="id" name= "city"
-    v-model="currentPersonne.city"
+  <input type="text" class ="form-control" id="id" name= "city" v-model="currentPersonne.city"
     /> 
 
-  </div> 
+  </div>
 
-    <!-- A INCLURE DANS LE FORM -->
-    <button class="badge badge-danger mr-2"
+    <button class="btn btn-danger col-sm-3"
       @click="deletePersonne"
+
     >
       Supprimer
     </button>
 
-
-    <!-- A INCLURE DANS LE FORM -->
-    <button type="submit" class="badge badge-success"
+    <button type="submit" class="btn btn-warning col-sm-3"
       @click="updatePersonne"
     >
       Modifier
@@ -77,10 +70,10 @@ export default {
   updatePersonne() {
      PersonneDataService.update(this.currentPersonne)
         .then(response => {
-          this.currentPersonne= response.data;
-          console.log(response.data);
-          this.$router.push({path:'/personnes'});
+          
           this.message = 'Personne modifiée avec succès!';
+          console.log(response.data);
+          this.submitted = true;
         })
         .catch(e => {
           console.log(e);
@@ -114,13 +107,8 @@ export default {
 
  <style>
   .edit-form {
-  max-width: 600px;
-  margin: auto;
+    max-width: 300px;
+    margin: auto;
 }
  </style>
- <body style="background-color:powderblue;">
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
