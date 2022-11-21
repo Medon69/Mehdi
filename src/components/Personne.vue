@@ -1,11 +1,12 @@
 <template>
+ 
  <div v-if="currentPersonne">
   <div class="col-sm-6">
     <label for="id">ID</label>
     <input type="text" class ="form-control" id="id" name="" v-model="currentPersonne.id"
     /> 
-  </div> 
-  <div class="col-sm-6">
+ </div> 
+ <div class="col-sm-6">
     <label for="id">Prenom</label>
     <input type="text" class ="form-control" id="id" name="surname" v-model="currentPersonne.surname"
     /> 
@@ -29,7 +30,6 @@
 
     <button class="btn btn-danger col-sm-3"
       @click="deletePersonne"
-
     >
       Supprimer
     </button>
@@ -40,8 +40,10 @@
       Modifier
     </button>
     <p>{{ message }}</p>
+
    </div> 
- </template>
+ 
+</template>
 
 <script>
 import PersonneDataService from "../services/PersonneDataService";
@@ -106,6 +108,7 @@ export default {
 </script>
 
  <style>
+  
   .edit-form {
     max-width: 300px;
     margin: auto;

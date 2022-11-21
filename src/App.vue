@@ -1,25 +1,30 @@
+
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
-      <router-link to="" class="navbar-brand"><h3>Bienvenue sur votre annuaire</h3></router-link>
-      <div class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link to="/personnes" class="nav-link"><h4>Personnes</h4></router-link>
+    <nav class="navbar-dark bg-dark">
+      <router to="" class="text center text-warning" ><CENTER><h1>&#9990; Bienvenue sur votre annuaire &#9990;</h1></CENTER>
+      </router>
+  <div class="navbar-nav mr-auto">
+        <li class="nav-item"> 
+          <router-link to="/personnes" class="text center btn btn-primary"><h4>Liste des personnes  
+           &#128218; </h4></router-link>
         </li>
         <li class="nav-item">
-          <router-link to="ajouter-personne" class="nav-link"><h4>Ajouter</h4></router-link>
+          <router-link to="ajouter-personne" class="text center btn btn-success"><h4>Ajouter une personne &#128104;</h4></router-link>
         </li>
-      </div>
+  </div>
     </nav>
-
-    <div class="container mt-3">
+  <div class="container mt-3">
       <router-view />
-    </div>
+  </div>
   </div>
 </template>
 
+
 <script>
+
 export default {
   name: "app"
 };
+
 </script>

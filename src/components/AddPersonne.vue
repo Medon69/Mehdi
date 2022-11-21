@@ -9,37 +9,37 @@
         v-model= "personne.id"
           />
       </div>
-        <div class="form-group">
+      <div class="form-group">
         <label for="surname">Prénom</label>
         <input type="text" class="form-control" id="surname"
         v-model= "personne.surname"
           />
-       </div>
-        <div class="form-group">
+      </div>
+      <div class="form-group">
         <label for="name">Nom</label>
         <input type="text" class="form-control" id="name"
         v-model= "personne.name"
           />
-       </div>
-       <div class="form-group">
+      </div>
+      <div class="form-group">
         <label for="phone">Téléphone</label>
         <input type="text" class="form-control" id="phone"
         v-model= "personne.phone"
           />
-       </div>
-       <div class="form-group">
+      </div>
+      <div class="form-group">
         <label for="city">Ville</label>
         <input type="text" class="form-control" id="city"
         v-model= "personne.city"
           />
       </div>
 
-      <button @click="creerPersonne" class="btn btn-success">Ajouter</button>
-    </div>
+       <button @click="creerPersonne" class="btn btn-success">Ajouter</button>
+      </div>
 
-    <div v-else>
-      <h3>Personne ajoutée avec succès!</h3>
-      <button class="btn btn-success" @click="resetForm">Ajouter une nouvelle personne</button>
+      <div v-else>
+       <h3>Personne ajoutée avec succès!</h3>
+       <button class="btn btn-success" @click="resetForm">Ajouter une nouvelle personne</button>
     </div>
   </div>
 </template>
@@ -91,6 +91,7 @@ export default {
 </script>
 
 <style>
+  
 .submit-form {
   max-width: 300px;
   margin: auto;
